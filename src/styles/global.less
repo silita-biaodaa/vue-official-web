@@ -1,0 +1,581 @@
+/*全局样式*/
+
+@import "common.less";
+@font-face {
+  font-family: "iconfont"; /* project id 1158234 */
+  src: url("//at.alicdn.com/t/font_1158234_175q0xeaymp.eot");
+  src: url("//at.alicdn.com/t/font_1158234_175q0xeaymp.eot?#iefix")
+      format("embedded-opentype"),
+    url("//at.alicdn.com/t/font_1158234_175q0xeaymp.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1158234_175q0xeaymp.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1158234_175q0xeaymp.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1158234_175q0xeaymp.svg#iconfont") format("svg");
+}
+i {
+  display: inline-block;
+  font-family: "iconfont";
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "siyuan-l";
+  src: url("@{fontsHost}SourceHanSansCN-Light.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "siyuan-r";
+  src: url("@{fontsHost}SourceHanSansCN-Normal.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "siyuan-m";
+  src: url("@{fontsHost}SourceHanSansCN-Medium.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "siyuan-b";
+  src: url("@{fontsHost}SourceHanSansCN-Bold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "comfortaa-b";
+  src: url("@{fontsHost}Comfortaa-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "comfortaa-l";
+  src: url("@{fontsHost}Comfortaa-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "comfortaa-r";
+  src: url("@{fontsHost}Comfortaa-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "fonts-score";
+  src: url("@{fontsHost}PostNoBillsJaffna-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "fonts-zcool";
+  src: url("@{fontsHost}zcool-gdh.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "fonts-pmzd";
+  src: url("@{fontsHost}pmzd.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (min-width: 0px) {
+  :global {
+    .base-width,
+    .containner-view {
+      min-width: 750px !important;
+      width: 100% !important;
+    }
+    .min-base-width {
+      min-width: 750px !important;
+      min-width: 100% !important;
+    }
+  }
+}
+.min-base-width {
+  min-width: 750px !important;
+}
+
+:global {
+  .min-width-form .ant-form-item-control-wrapper {
+    min-width: 300px;
+  }
+}
+
+@media (min-width: 1400px) {
+  :global {
+    .base-width,
+    .containner-view {
+      width: @baseWidth !important;
+      // min-width: 1570px !important;
+    }
+    .min-base-width {
+      min-width: @baseWidth !important;
+    }
+  }
+}
+
+:global {
+  .bg_img_container {
+    text-align: center;
+    .ant-layout {
+      background: transparent;
+    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-size: cover;
+  }
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 28px;
+  }
+
+  .siyuan-l {
+    font-family: "siyuan-l", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .siyuan-m {
+    font-family: "siyuan-m", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .siyuan-r {
+    font-family: "siyuan-r", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .siyuan-b {
+    font-family: "siyuan-b", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .fonts-en-l {
+    font-family: "comfortaa-l", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .fonts-en-r {
+    font-family: "comfortaa-r", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .fonts-en-b {
+    font-family: "comfortaa-b", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .comfortaa-l {
+    font-family: "comfortaa-l", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .comfortaa-r {
+    font-family: "comfortaa-r", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .comfortaa-b {
+    font-family: "comfortaa-b", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .fonts-score {
+    font-family: "fonts-score", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .fonts-zcool {
+    font-family: "fonts-zcool", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .fonts-pmzd {
+    font-family: "fonts-pmzd", "Microsoft YaHei", SimSun, sans-serif !important;
+  }
+  .scale7 {
+    transform: scale(0.6);
+  }
+  .scale7 {
+    transform: scale(0.7);
+  }
+  .scale8 {
+    transform: scale(0.8);
+  }
+  .clear-both {
+    clear: both;
+  }
+  .video-html {
+    overflow: hidden;
+  }
+  // 全局浮动
+  .float-right {
+    float: right;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+    background: @tintColor;
+    font-family: "siyuan-r", "Microsoft YaHei", SimSun, sans-serif;
+    font-size: 14px;
+    & > div {
+      background: @lightColor;
+    }
+    .full-view-container {
+      height: 100%;
+    }
+    p.current {
+      color: #fff;
+    }
+    .regular.slider.slick-initialized.slick-slider {
+      box-sizing: unset !important;
+    }
+    a:focus {
+      text-decoration: none;
+      -webkit-text-decoration-skip: none;
+      text-decoration-skip: none;
+    }
+    // 手势控制
+    .href {
+      cursor: pointer;
+    }
+    .no-select {
+      user-select: none;
+    }
+    // 字体大小
+    .title {
+      color: @titleColor;
+      font-size: @titleSize;
+      font-family: "siyuan-m";
+    }
+    .sub-title {
+      color: @subTitleColor;
+      font-size: @subTitleSize;
+    }
+    .content {
+      //默认
+      color: @contentColor;
+      font-size: @contentSize;
+    }
+    .sub-content {
+      color: @subContentColor;
+      font-size: @subContentSize;
+    }
+    .fs10 {
+      font-size: 12px;
+      font-family: "siyuan-l";
+      transform: scale(0.85);
+      display: inline-block;
+      position: absolute;
+      width: max-content;
+      width: 320px;
+      margin-left: -16px;
+    }
+    .fs12 {
+      font-size: 12px;
+    }
+    .fs13 {
+      font-size: 13px;
+    }
+    .fs14 {
+      font-size: 14px;
+    }
+    .fs16 {
+      font-size: 16px;
+    }
+    .fs18 {
+      font-size: 18px;
+    }
+    .fs20 {
+      font-size: 20px;
+    }
+    .fs26 {
+      font-size: 26px;
+    }
+    .fs28 {
+      font-size: 28px;
+    }
+    .fs30 {
+      font-size: 30px;
+    }
+    .fs34 {
+      font-size: 34px;
+    }
+    .fs40 {
+      font-size: 40px;
+    }
+    .fs45 {
+      font-size: 45px;
+    }
+    .fs50 {
+      font-size: 50px;
+    }
+    .fs52 {
+      font-size: 52px;
+    }
+    // !字体大小
+
+    /*  文字一行显示 */
+    .line-clamp1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    /*  文字两行显示 */
+    .line-clamp2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    // 基础颜色
+    .blue {
+      color: @blueColor;
+    }
+    .red {
+      color: @redColor;
+    }
+    .gray {
+      color: @grayColor;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .green {
+      color: @greenColor;
+    }
+    .tint-green {
+      color: @tintGreenColor;
+    }
+    .orange {
+      color: @orangeColor;
+    }
+    .theme {
+      color: @themeColor;
+    }
+    .goldden {
+      color: @golddenColor;
+    }
+    .black {
+        color: @black;
+    }
+    // 浮动
+    .float-r {
+      float: right;
+    }
+    .float-l {
+      float: left;
+    }
+    //滑块验证
+    #slideVerify {
+      position: absolute;
+      z-index: 99;
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid #eee;
+      padding: 10px;
+      box-shadow: 2px 2px 17px #ababab;
+      .drag {
+        top: 18px;
+        width: 242px;
+        height: 36px;
+        line-height: 36px;
+        background-color: #e8e8e8;
+        position: relative;
+        margin: 0 auto;
+        border-radius: 36px;
+      }
+      .bg {
+        /* width:40px;
+        height: 100%;
+        position: absolute;
+        background-color: #75CDF9; */
+      }
+      .text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        user-select: none;
+        color: #999999;
+      }
+      .btn {
+        width: 54px;
+        height: 54px;
+        position: absolute;
+        border-radius: 54px;
+        cursor: pointer;
+        user-select: none;
+        top: -10px;
+        margin-left: -2px;
+      }
+      .chip {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+      }
+      .chip2 {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        -webkit-filter: brightness(0) opacity(0.5);
+      }
+      .image {
+        width: 240px;
+        height: 154px;
+        position: relative;
+        margin: 0 auto;
+      }
+      .divider {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 1px;
+        background: #eee;
+        bottom: 32px;
+      }
+      .bottom {
+        position: relative;
+        top: 8px;
+        margin-top: 38px;
+        span {
+          user-select: none;
+          position: relative;
+          .tips-pop {
+            display: none;
+            position: absolute;
+            top: -40px;
+            left: 10px;
+            background: #555;
+            padding: 2px 8px;
+            color: #eee;
+            width: 72px;
+            border-radius: 3px;
+            z-index: 10;
+          }
+          .tips-pop::before {
+            content: "";
+            position: absolute;
+            border-left: 6px solid #555;
+            border-top: 6px solid #555;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            bottom: -6px;
+            left: 0;
+            z-index: 0;
+          }
+        }
+        span:hover {
+          .tips-pop {
+            display: block;
+          }
+        }
+        i {
+          cursor: pointer;
+          font-size: 20px;
+          height: 20px;
+          line-height: 20px;
+          font-weight: bold;
+          color: #b5b5b5;
+          margin: auto 4px;
+        }
+      }
+    }
+
+    // flex
+    .dfr {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .dfc {
+      display: flex;
+      flex-direction: column;
+    }
+    .drc {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .dc {
+      display: flex;
+      flex-direction: column;
+    }
+    .dcr {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .dfrc {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dfcc {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dfccb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dfrsb {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      justify-content: space-between;
+    }
+
+    .dfrcb {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .dfrca {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .dfra {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .dfrcw {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .dfrcsw {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    .dfrcs {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .dfrs {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+    // 图片模式
+    .img-contain {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .img-cover {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .hide {
+    display: none;
+  }
+  //清除浮动;
+  .clearfix:after{content:".";clear: both;height:0;visibility: hidden;display:block;}
+  .clearfix{*zoom: 1;}
+}

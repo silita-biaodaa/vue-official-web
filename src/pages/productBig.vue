@@ -1,0 +1,357 @@
+<template>
+  <div class="productBig">
+    <div class="top_bar">
+      <div class="bar_left dcr bf-fff color-fff">
+        <div class="fs52 f500 mb40">
+          产品介绍
+          <span class="fs28 ml20">Product Presentation</span>
+        </div>
+        <div class="left_info">湖南思利他网络科技有限公司成立于2017年，前身是湖南耀邦。湖南思利他网络科技有限公司 成立于2017年，前身是湖南耀邦…</div>
+      </div>
+    </div>
+    <currentTab :productList="productList" @childValue="getValue" class="pt30 bg-fff"></currentTab>
+    <div :class="{hide : tabNav !== 0}" class="bg-fff">
+      <div class="product_info">
+        <div class="biaodd">
+          <div class="fs28">标大大</div>
+        </div>
+        <div
+          class="fs20 mt40 mb40"
+        >标大大是一个专注于建筑行业的综合信息服务平台，平台上线四年时间，已经建立了强大的数据库，几乎囊括了建筑行业从业者所关心的所有数据，包括720w+工程项目信息、400w+企业信息、430w+人员信息、500w+法务信息等，日均新增信息上万条，湖南地区注册用户占比80%以上，被誉为最懂建筑业的互联网产品。</div>
+        <div class="fs34 text-c user_title">让用户小成本中大标</div>
+        <publicInfo class="pb40"></publicInfo>
+      </div>
+      <div class="biaodd_info pt80 pb40">
+        <div class="biaodd_item">
+          <div class="fs34 text-c mb80">评标专家都在用的招投标神器</div>
+          <div class="dfrcb">
+            <div class="biaodd_item_img">
+              <img :src="img" alt />
+            </div>
+            <div class="item_info">
+              <div class="fs16 f600 mb20">海量数据，实时更新</div>
+              <div class="bottom_info mb40 fs14">
+                日均新增信息量上万条。
+                <span>500w+</span>建筑企业法务数据；
+                <span>10W+</span>湖南在建数据
+                <span>50W+</span>企业数据；
+                <span>200w+</span>业绩数据 ；
+                <span>400w+</span>建筑行业企业工商详情；
+                <span>300w+</span>建筑行业企业联系方式；
+                <span>430w+</span>企业注册人员；
+                <span>400w+</span>招标公告；
+                <span>320w+</span>中标公告。
+              </div>
+              <ul v-for="(item,i) in biaoddList" :key="i">
+                <li>
+                  <div class="fs16 f600 mb20">{{item.title}}</div>
+                  <ul class="mb40">
+                    <li v-for="(a,b) in item.itemList" :key="b" class="bottom_info fs14">{{a.info}}</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt80 pb80 service">
+        <div class="core_service">
+          <div class="img1">
+            <img :src="img1" alt />
+          </div>
+          <div class="img2">
+            <img :src="img2" alt />
+          </div>
+          <div class="img3">
+            <img :src="img3" alt />
+          </div>
+          <div class="text-c fs34 mb40">会员专属八大核心服务</div>
+          <div class="item">
+            <ul class="dfrcb">
+              <li v-for="(item,index) in serviceList" :key="index" class="mt20">
+                <div :class="{'hideBox': index == 8}" class="li_item">
+                  <div class="fs16 f600 pt20 pb10 pl20 pr20">{{item.title}}</div>
+                  <div class="fs14 f400 pl20 pr20">{{item.content}}</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="CQ_code pt80 pb80">
+          <div class="link_code">
+              <div class="fs34 text-c mb80">各大市场均可下载</div>
+              <div class="fs20 mb40">标大大App已上线苹果应用商店和各大安卓应用市场，欢迎下载使用～</div>
+              <div class="dfrca">
+                  <div>
+                      <div class="code_item">
+                          <img :src="img4" alt="">
+                      </div>
+                      <div class="text-c fs20 mt30">App Store/安卓市场下载</div>
+                  </div>
+                  <div>
+                      <div class="code_item">
+                          <img :src="img4" alt="">
+                      </div>
+                      <div class="text-c fs20 mt30">关注公众号</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div :class="{hide : tabNav !== 1}">哈哈</div>
+    <div :class="{hide : tabNav !== 2}">嘻嘻</div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      img: require("../assets/src/images/biaodd_bg3.png"),
+      img1: require("../assets/src/images/biaodd_icon1.png"),
+      img2: require("../assets/src/images/biaodd_icon2.png"),
+      img3: require("../assets/src/images/biaodd_icon3.png"),
+      img4: require("../assets/src/images/biaodd_code1.png"),
+      img5: require("../assets/src/images/biaodd_code2.png"),
+      productList: [
+        {
+          id: 0,
+          title: "标大大"
+        },
+        {
+          id: 1,
+          title: "数据定制服务"
+        },
+        {
+          id: 2,
+          title: "日精进小程序"
+        }
+      ],
+      tabNav: 0,
+      biaoddList: [
+        {
+          title: "数据权威可靠",
+          itemList: [
+            {
+              info: "标大大——已获得国家版权局颁发的计算机软件著作权。"
+            },
+            {
+              info:
+                "标大大平台信息均来源全国建筑市场监管公共服务平台、地方四库一平台、全国招投标监管网、地方招投标监管网、各级政府采购网，权威可靠。可用于企业投标信息参考、招投标业绩核实、信用评估等方面。"
+            }
+          ]
+        },
+        {
+          title: "信息全面，你想查的这里都有",
+          itemList: [
+            {
+              info: "查企业（可查询企业工商、法务、资质、业绩、中标）"
+            },
+            {
+              info: "查在建（可查询湖南省内所有在建项目信息）"
+            },
+            {
+              info:
+                "查人员（可精准查询个人注册证书、个人业绩、不良记录、变更记录）"
+            },
+            {
+              info:
+                "查中标（可根据地区、中标金额、关键词筛选出您想要的中标公告）"
+            },
+            {
+              info:
+                "查招标（可根据地区、类型、招标金额、关键词筛选出您想要的招标公告）"
+            },
+            {
+              info:
+                "查法务（可查询全国建筑业，输入企业名称即可查询改公司是否有相关法务信息）"
+            },
+            {
+              info: "查业绩（可查询全国住建、水利、交通行业）"
+            }
+          ]
+        }
+      ],
+      serviceList: [
+        {
+          title: "全国业绩，组合查询",
+          content:
+            "涵盖全国住建部、水利部、交通部业绩，可根据项目竣工时间、项目金额、项目地区等组合查询。"
+        },
+        {
+          title: "招、中标公告筛选",
+          content:
+            "提供全国各省的招、中标公告，会员可根据地区、项目类型、项目资质和评标办法等筛选条件查询出自己想要的信息。"
+        },
+        {
+          title: "企业数据库",
+          content:
+            "提供300万+家企业的基本信息，包括企业工商信息、企业联系方式、分支机构、法务信息、资质信息、人员信息、业绩信息、中标信息、诚信信息。"
+        },
+        {
+          title: "综合查询",
+          content:
+            "业绩等条件，查询出符合条件的建筑企业业绩信息，快捷方便，为用户提供个性化的信息查询服务。"
+        },
+        {
+          title: "是否在建一查便知",
+          content:
+            "1、涵盖湖南省内所有在建信息。2、精准查询，只要输入姓名或者身份证号即可查询，数据真实可靠。"
+        },
+        {
+          title: "客服经理一对一服务",
+          content:
+            "提供一对一的客服经理服务模式。在服务期间内为会员单位提供全方位立体式的服务，及时解决会员单位使用过程中遇到的问题和困难。"
+        },
+        {
+          title: "首页企业推广",
+          content:
+            "将会员单位的广告上传到相关页面，整合标大大上下游企业之间的强强合作，充分促进会员单位之间的优势资源互补，并帮助宣传企业获得更多业务的合作机会。"
+        },
+        {
+          title: "建筑企业综合评分排行榜",
+          content:
+            "只要政府更新建筑企业综合评分排行榜，标大大会在一周内给会员用户邮寄湖南省内前一百名企业评分纸质排行榜。"
+        },
+        {
+          title: "",
+          content: ""
+        }
+      ]
+    };
+  },
+  methods: {
+    getValue(data) {
+      this.tabNav = data;
+    }
+  }
+};
+</script>
+<style lang="less">
+@import "../styles/global";
+@bg-width: 1180px;
+.productBig {
+  .top_bar {
+    height: 468px;
+    width: 100%;
+    background-image: url("../assets/src/images/banner-info1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .bar_left {
+      width: @bg-width;
+      min-width: @bg-width;
+      margin: 0 auto;
+      height: 100%;
+      .left_info {
+        font-size: 17px;
+        width: 700px;
+      }
+    }
+  }
+  .product_info {
+    width: @bg-width;
+    min-width: @bg-width;
+    margin: 0 auto;
+    .biaodd {
+      height: 120px;
+      line-height: 120px;
+      border-bottom: 1px solid #dddfe4;
+    }
+    .user_title {
+      margin-bottom: 80px;
+    }
+  }
+  .biaodd_info {
+    background-color: @bgColor;
+    .biaodd_item {
+      width: @bg-width;
+      min-width: @bg-width;
+      margin: 0 auto;
+      .biaodd_item_img {
+        width: 577px;
+        height: 453px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .item_info {
+      .bottom_info {
+        width: 485px;
+        span {
+          color: @mainColor;
+        }
+      }
+    }
+  }
+  .service {
+    position: relative;
+    .core_service {
+      width: @bg-width;
+      min-width: @bg-width;
+      margin: 0 auto;
+      .img1 {
+        width: 89px;
+        height: 109px;
+        position: absolute;
+        top: 61px;
+        right: 457px;
+      }
+      .img2 {
+        width: 87px;
+        height: 93px;
+        position: absolute;
+        bottom: 33px;
+        left: 264px;
+      }
+      .img3 {
+        width: 56px;
+        height: 51px;
+        position: absolute;
+        right: 295px;
+        bottom: 56px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .item {
+        ul > li {
+          .li_item {
+            width: 380px;
+            height: 134px;
+            border: 1px solid rgba(221, 223, 228, 1);
+          }
+          .hideBox {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  .CQ_code {
+      background: @bgColor;
+      .link_code {
+        width: @bg-width;
+        min-width: @bg-width;
+        margin: 0 auto;
+        .code_item {
+            width: 342px;
+            height: 342px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+      }
+  }
+  //覆盖子组件样式
+  .publicInfo /deep/ .item_left {
+    background: url(../assets/src/images/biaodd_bg1.png) no-repeat !important;
+  }
+  .publicInfo /deep/ .item_right {
+    background: url(../assets/src/images/biaodd_bg2.png) no-repeat !important;
+  }
+}
+</style>
