@@ -1,5 +1,5 @@
 <template>
-  <div class="productBig">
+  <div class="productBig pt60">
     <narBar></narBar>
     <topBar :titleInfo="titleInfo"></topBar>
     <div class="pt30">
@@ -81,7 +81,7 @@
             <div class="dfrca">
               <div>
                 <div class="code_item">
-                  <img :src="img4" alt />
+                  <img :src="img5" alt />
                 </div>
                 <div class="text-c fs20 mt30">App Store/安卓市场下载</div>
               </div>
@@ -168,7 +168,7 @@ export default {
         },
         {
           id: 2,
-          title: "日精进小程序",
+          title: "日精进定课小程序",
           path: "/smallOrder"
         }
       ],
@@ -221,8 +221,8 @@ export default {
       titleInfo: {
         themem: "产品介绍",
         title: "Product Presentation",
-        companyInfo:
-          "湖南思利他网络科技有限公司成立于2017年，前身是湖南耀邦。湖南思利他网络科技有限公司 成立于2017年，前身是湖南耀邦…"
+        // companyInfo:
+        //   "湖南思利他网络科技有限公司成立于2017年，前身是湖南耀邦。湖南思利他网络科技有限公司 成立于2017年，前身是湖南耀邦…"
       }
     };
   },
@@ -294,20 +294,20 @@ export default {
           height: 109px;
           position: absolute;
           top: 61px;
-          right: 457px;
+          right: 250px;
         }
         .img2 {
           width: 87px;
           height: 93px;
           position: absolute;
           bottom: 33px;
-          left: 264px;
+          left: 200px;
         }
         .img3 {
           width: 56px;
           height: 51px;
           position: absolute;
-          right: 295px;
+          right: 150px;
           bottom: 56px;
         }
         img {

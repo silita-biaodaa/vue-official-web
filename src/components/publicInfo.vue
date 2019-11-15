@@ -3,15 +3,15 @@
         <div class="dfrcb mb40">
             <div class="item_left bg-fff">
                 <div class="fs20 f500 pl30 pr30 pt30 pb20">信息全面，你想查的这里都有</div>
-                <div class="fs14 left_info pl30 pr30">近百个政府网站，一键跳转；招标、中标一目了然；是否在建，一查便知；资质+业绩+综合查询；查企业、人员、业绩、法务；海量联系方式</div>
+                <div class="fs14 left_info pl30 pr30">招标、中标一目了然；是否在建，一查便知；资质+业绩+综合查询；查企业、人员、业绩、法务；海量联系方式</div>
             </div>
             <div class="item_right bg-fff">
                 <div class="fs20 f500 pl30 pr30 pt30 pb20">海量数据，实时更新</div>
-                <div class="fs14 right_info pl30 pr30">220万+行业精准通讯录；300万+建筑行业企业联系方式；10万+湖南在建数据，精准查询企业注册人员有无在建项目；50万+企业数据，涵盖建筑、公路、水利（企业资质、注册人员、业绩）；430万+建筑行业注册人员；500万+建…</div>
+                <div class="fs14 right_info pl30 pr30">日均新增信息量上万条。 500w+建筑企业法务数据； 10W+湖南在建数据 50W+企业数据； 200w+业绩数据 ； 400w+建筑行业企业工商详情； 300w+建筑行业企业联系方式； 430w+企业注册人员； 400w+招标公告； 320w+中标公告。</div>
             </div>
         </div>
-        <div>
-            <ul class="dfrcb pl30 pr30">
+        <div class="pl30 pr30">
+            <ul class="dfrcb">
                 <li class="mb40" v-for="(item,i) in companyInfo" :key="i">
                     <div class="fs16 mb10 f600">{{item.title}}</div>
                     <div class="fs14">{{item.info}}</div>
@@ -51,7 +51,7 @@ export default {
                 },
                 {
                     title: "查在建",
-                    info: "1、涵盖湖南省内所有在建信息。2、只需输入身份证号即可精准查询人员在建情况，数据真实可靠。3、在…"
+                    info: "1、涵盖湖南省内所有在建信息。 2、只需输入身份证号即可精准查询人员在建情况，数据真实可靠。3、在建信息实时更新，是否在建，一查便知。"
                 },
             ]
         }

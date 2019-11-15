@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home pt60">
     <narBar></narBar>
     <div class="home_middle">
       <div class="dfrcb home_middle_title">
@@ -26,28 +26,34 @@
                 @click="handleClick(item.id)"
                 class="center-tb-scatter"
               >
-                <a :class="{active : current == item.id}">
-                  {{item.title}}
-                </a>
+                <a :class="{active : current == item.id}">{{item.title}}</a>
                 <div v-if="current == item.id" class="line"></div>
               </li>
             </ul>
             <el-divider class="mb40"></el-divider>
             <div :class="{hide : current !== 0}">
               <publicInfo></publicInfo>
+              <div class="more_info fs20 text-c cp" @click="biaodd">
+                了解更多
+                <i class="el-icon-arrow-right"></i>
+              </div>
             </div>
             <div :class="{hide : current !== 1}">
               <div
                 class="fs20 mb40"
               >根据用户要求采集建筑行业公众数据，然后对数据进行实时更新、清洗、解析、整理。达到相关数据可视化分析、数据平台搭建，帮助企业构建贴合自身业务的数据系统，帮助沉淀数据资产，轻松挖掘大数据价值。从而为企业经营、管理提供数据支撑。</div>
               <publicTable :tableInfo="tableInfo"></publicTable>
+              <div class="more_info fs20 text-c cp" @click="dataService">
+                了解更多
+                <i class="el-icon-arrow-right"></i>
+              </div>
             </div>
             <div :class="{hide : current !== 2}">
               <publicProduct></publicProduct>
-            </div>
-            <div class="more_info fs20 text-c cp">
-              了解更多
-              <i class="el-icon-arrow-right"></i>
+              <div class="more_info fs20 text-c cp" @click="smallOrder">
+                了解更多
+                <i class="el-icon-arrow-right"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -66,11 +72,11 @@
           <li v-for="(item,i) in areaInfo" :key="i" class="info_title cp mb20">
             <div class="info_item">
               <div class="fs20 color-fff pt30 pl30 pr30 pb30">{{item.title}}</div>
-            <div class="pl30">
-              <ul v-for="(a,b) in item.information" :key="b">
-                <li class="color-fff fs14 mb10">{{a.info}}</li>
-              </ul>
-            </div>
+              <div class="pl30">
+                <ul v-for="(a,b) in item.information" :key="b">
+                  <li class="color-fff fs14 mb10">{{a.info}}</li>
+                </ul>
+              </div>
             </div>
           </li>
         </ul>
@@ -206,7 +212,7 @@ export default {
         },
         {
           id: 2,
-          title: "日精进小程序"
+          title: "日精进定课小程序"
         }
       ],
       tableInfo: [
@@ -259,6 +265,22 @@ export default {
   methods: {
     handleClick(index) {
       this.current = index;
+    },
+    returnTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    },
+    biaodd() {
+      this.$router.push({ path: '/productBig', query: { id: 0 } });
+      this.returnTop();
+    },
+    dataService() {
+      this.$router.push({ path: '/dataService', query: { id: 1 } });
+      this.returnTop();
+    },
+    smallOrder() {
+      this.$router.push({ path: '/smallOrder', query: { id: 2 } });
+      this.returnTop();
     }
   },
   created() {}
@@ -323,6 +345,7 @@ export default {
     }
     .product_name li {
       height: 60px;
+      width: 160px;
     }
     .line {
       width: 100px;
@@ -367,15 +390,15 @@ export default {
           border-radius: 4px;
           background-color: #4468e5;
           .info_item {
-          height: 100%;
-          width: 100%;
-          border-radius: 4px;
-        }
-        .info_item:hover {
-          transform: scale(1.03, 1.07);
-          border: 1px solid #ffffff;
-          background-color: #4468e5;
-        }
+            height: 100%;
+            width: 100%;
+            border-radius: 4px;
+          }
+          .info_item:hover {
+            transform: scale(1.03, 1.07);
+            border: 1px solid #ffffff;
+            background-color: #4468e5;
+          }
         }
       }
     }

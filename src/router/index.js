@@ -16,6 +16,7 @@ import history from '@/pages/history'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',

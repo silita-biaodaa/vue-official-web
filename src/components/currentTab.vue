@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     handleClick(index,path) {
-      this.current = index;
+      this.current = path;
       if(this.$route.path !== path) {
         this.$router.push({ path: path, query: { id: index } });
       }

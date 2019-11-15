@@ -4,7 +4,9 @@
       <div class="navbar_info">
         <a @click="jumpIndex" class="cp">
           <div class="navbar_top_left drc">
-          <!-- <img :src="img1" alt /> -->
+            <div class="img_logo">
+              <img :src="img1" alt />
+            </div>
           <div class="navbar_top_line bg-white ml20 mr20"></div>
           <div class="color-fff fs16">积善行 思利他</div>
         </div>
@@ -55,6 +57,7 @@
 export default {
   data() {
     return {
+      img1: require("../assets/src/images/logo.png"),
       optionList: [
         {
           id: 0,
@@ -113,20 +116,20 @@ export default {
             }
           ]
         },
-        {
-          id: 2,
-          title: "团队介绍",
-          companyInfo: [
-            {
-              index: 0,
-              name: "团队介绍",
-            },
-            {
-              index: 1,
-              name: "团队优势"
-            }
-          ]
-        },
+        // {
+        //   id: 2,
+        //   title: "团队介绍",
+        //   companyInfo: [
+        //     {
+        //       index: 0,
+        //       name: "团队介绍",
+        //     },
+        //     {
+        //       index: 1,
+        //       name: "团队优势"
+        //     }
+        //   ]
+        // },
         {
           id: 3,
           title: "关于我们",
@@ -173,6 +176,8 @@ export default {
       if(this.$route.path !== path) {
         this.$router.push({ path: path, query: { id: index } });
       }
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
     jumpIndex() {
       if(this.$route.path !== "/") {
@@ -188,6 +193,11 @@ export default {
 @bg-black: #000000;
 @min-width: 1180px;
 .navBar {
+  width: 100%;
+  min-width: @min-width;
+  position: fixed;
+  top: 0;
+  z-index: 20;
   .navbar {
     height: 60px;
     line-height: 60px;
@@ -201,9 +211,13 @@ export default {
       margin: 0 auto;
     }
     .navbar_top_left {
-      img {
-        height: 60px;
+      .img_logo {
         width: 100px;
+        height: 50px;
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
       .navbar_top_line {
         height: 20px;

@@ -3,14 +3,6 @@
   <div id="app">
     <router-view />
     <div class="public_footer bg-black">
-      <div class="weChat clear">
-        <div class="fr cp" @click="returnTop">
-          <div class="weChat_img dfrc">
-            <img src="../src/assets/src/images/go_back.png" alt />
-          </div>
-        </div>
-        <div class="weChat_us color-fff fs20 text-c cp">联系我们</div>
-      </div>
       <div class="company_info">
         <div class="fs16">联系我们</div>
         <div class="dfrcb">
@@ -35,13 +27,21 @@
             </div>
           </div>
           <div class="CQ_code">
-            <img src="../src/assets/src/images/CQ_code.png" alt />
+            <img src="../src/assets/src/images/CQ_code.jpg" alt />
             <div class="text-c">关注公众号</div>
           </div>
         </div>
       </div>
       <div class="text-c">© 2017 思利他, Inc. All rights reserved . 湘ICP备17019911号-1</div>
     </div>
+    <div class="weChat clear" v-show="toBack" @scroll="handleScroll ">
+        <div class="fr cp" @click="returnTop">
+          <div class="weChat_img dfrc">
+            <img src="../src/assets/src/images/go_back.png" alt />
+          </div>
+        </div>
+        <!-- <div class="weChat_us color-fff fs20 text-c cp">联系我们</div> -->
+      </div>
   </div>
 </template>
 
@@ -49,7 +49,9 @@
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      toBack: false,
+    };
   },
   methods: {
     handleScroll() {
@@ -57,6 +59,11 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
+        if(scrollTop > 1300) {
+          this.toBack = true;
+        }else {
+          this.toBack = false;
+        }
     },
     returnTop() {
       document.body.scrollTop = 0;
@@ -140,9 +147,10 @@ export default {
   .weChat {
     width: 154px;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     right: 60px;
-    bottom: 180%;
+    top: 80%;  
+    right: 5%;  
     .weChat_img {
       width: 52px;
       height: 52px;
