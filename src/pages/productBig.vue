@@ -1,106 +1,101 @@
 <template>
   <div class="productBig">
-    <div class="top_bar">
-      <div class="bar_left dcr bf-fff color-fff">
-        <div class="fs52 f500 mb40">
-          产品介绍
-          <span class="fs28 ml20">Product Presentation</span>
+    <narBar></narBar>
+    <topBar :titleInfo="titleInfo"></topBar>
+    <div class="pt30">
+      <currentTab :productList="productList"></currentTab>
+      <div :class="{hide : tabNav !== 0}" class="bg-fff current0">
+        <div class="product_info">
+          <barTitle :title="title"></barTitle>
+          <div
+            class="fs20 mt40 mb40"
+          >标大大是一个专注于建筑行业的综合信息服务平台，平台上线四年时间，已经建立了强大的数据库，几乎囊括了建筑行业从业者所关心的所有数据，包括720w+工程项目信息、400w+企业信息、430w+人员信息、500w+法务信息等，日均新增信息上万条，湖南地区注册用户占比80%以上，被誉为最懂建筑业的互联网产品。</div>
+          <div class="fs34 text-c user_title">让用户小成本中大标</div>
+          <publicInfo class="pb40"></publicInfo>
         </div>
-        <div class="left_info">湖南思利他网络科技有限公司成立于2017年，前身是湖南耀邦。湖南思利他网络科技有限公司 成立于2017年，前身是湖南耀邦…</div>
-      </div>
-    </div>
-    <currentTab :productList="productList" @childValue="getValue" class="pt30 bg-fff"></currentTab>
-    <div :class="{hide : tabNav !== 0}" class="bg-fff">
-      <div class="product_info">
-        <div class="biaodd">
-          <div class="fs28">标大大</div>
-        </div>
-        <div
-          class="fs20 mt40 mb40"
-        >标大大是一个专注于建筑行业的综合信息服务平台，平台上线四年时间，已经建立了强大的数据库，几乎囊括了建筑行业从业者所关心的所有数据，包括720w+工程项目信息、400w+企业信息、430w+人员信息、500w+法务信息等，日均新增信息上万条，湖南地区注册用户占比80%以上，被誉为最懂建筑业的互联网产品。</div>
-        <div class="fs34 text-c user_title">让用户小成本中大标</div>
-        <publicInfo class="pb40"></publicInfo>
-      </div>
-      <div class="biaodd_info pt80 pb40">
-        <div class="biaodd_item">
-          <div class="fs34 text-c mb80">评标专家都在用的招投标神器</div>
-          <div class="dfrcb">
-            <div class="biaodd_item_img">
-              <img :src="img" alt />
-            </div>
-            <div class="item_info">
-              <div class="fs16 f600 mb20">海量数据，实时更新</div>
-              <div class="bottom_info mb40 fs14">
-                日均新增信息量上万条。
-                <span>500w+</span>建筑企业法务数据；
-                <span>10W+</span>湖南在建数据
-                <span>50W+</span>企业数据；
-                <span>200w+</span>业绩数据 ；
-                <span>400w+</span>建筑行业企业工商详情；
-                <span>300w+</span>建筑行业企业联系方式；
-                <span>430w+</span>企业注册人员；
-                <span>400w+</span>招标公告；
-                <span>320w+</span>中标公告。
+        <div class="biaodd_info pt80 pb40">
+          <div class="biaodd_item">
+            <div class="fs34 text-c mb80">评标专家都在用的招投标神器</div>
+            <div class="dfrcb">
+              <div class="biaodd_item_img">
+                <img :src="img" alt />
               </div>
-              <ul v-for="(item,i) in biaoddList" :key="i">
-                <li>
-                  <div class="fs16 f600 mb20">{{item.title}}</div>
-                  <ul class="mb40">
-                    <li v-for="(a,b) in item.itemList" :key="b" class="bottom_info fs14">{{a.info}}</li>
-                  </ul>
+              <div class="item_info">
+                <div class="fs16 f600 mb20">海量数据，实时更新</div>
+                <div class="bottom_info mb40 fs14">
+                  日均新增信息量上万条。
+                  <span>500w+</span>建筑企业法务数据；
+                  <span>10W+</span>湖南在建数据
+                  <span>50W+</span>企业数据；
+                  <span>200w+</span>业绩数据 ；
+                  <span>400w+</span>建筑行业企业工商详情；
+                  <span>300w+</span>建筑行业企业联系方式；
+                  <span>430w+</span>企业注册人员；
+                  <span>400w+</span>招标公告；
+                  <span>320w+</span>中标公告。
+                </div>
+                <ul v-for="(item,i) in biaoddList" :key="i">
+                  <li>
+                    <div class="fs16 f600 mb20">{{item.title}}</div>
+                    <ul class="mb40">
+                      <li
+                        v-for="(a,b) in item.itemList"
+                        :key="b"
+                        class="bottom_info fs14"
+                      >{{a.info}}</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pt80 pb80 service">
+          <div class="core_service">
+            <div class="img1">
+              <img :src="img1" alt />
+            </div>
+            <div class="img2">
+              <img :src="img2" alt />
+            </div>
+            <div class="img3">
+              <img :src="img3" alt />
+            </div>
+            <div class="text-c fs34 mb40">会员专属八大核心服务</div>
+            <div class="item">
+              <ul class="dfrcb">
+                <li v-for="(item,index) in serviceList" :key="index" class="mt20">
+                  <div :class="{'hideBox': index == 8}" class="li_item">
+                    <div class="fs16 f600 pt20 pb10 pl20 pr20">{{item.title}}</div>
+                    <div class="fs14 f400 pl20 pr20">{{item.content}}</div>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
-      <div class="pt80 pb80 service">
-        <div class="core_service">
-          <div class="img1">
-            <img :src="img1" alt />
-          </div>
-          <div class="img2">
-            <img :src="img2" alt />
-          </div>
-          <div class="img3">
-            <img :src="img3" alt />
-          </div>
-          <div class="text-c fs34 mb40">会员专属八大核心服务</div>
-          <div class="item">
-            <ul class="dfrcb">
-              <li v-for="(item,index) in serviceList" :key="index" class="mt20">
-                <div :class="{'hideBox': index == 8}" class="li_item">
-                  <div class="fs16 f600 pt20 pb10 pl20 pr20">{{item.title}}</div>
-                  <div class="fs14 f400 pl20 pr20">{{item.content}}</div>
+        <div class="CQ_code pt80 pb80">
+          <div class="link_code">
+            <div class="fs34 text-c mb80">各大市场均可下载</div>
+            <div class="fs20 mb40">标大大App已上线苹果应用商店和各大安卓应用市场，欢迎下载使用～</div>
+            <div class="dfrca">
+              <div>
+                <div class="code_item">
+                  <img :src="img4" alt />
                 </div>
-              </li>
-            </ul>
+                <div class="text-c fs20 mt30">App Store/安卓市场下载</div>
+              </div>
+              <div>
+                <div class="code_item">
+                  <img :src="img4" alt />
+                </div>
+                <div class="text-c fs20 mt30">关注公众号</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="CQ_code pt80 pb80">
-          <div class="link_code">
-              <div class="fs34 text-c mb80">各大市场均可下载</div>
-              <div class="fs20 mb40">标大大App已上线苹果应用商店和各大安卓应用市场，欢迎下载使用～</div>
-              <div class="dfrca">
-                  <div>
-                      <div class="code_item">
-                          <img :src="img4" alt="">
-                      </div>
-                      <div class="text-c fs20 mt30">App Store/安卓市场下载</div>
-                  </div>
-                  <div>
-                      <div class="code_item">
-                          <img :src="img4" alt="">
-                      </div>
-                      <div class="text-c fs20 mt30">关注公众号</div>
-                  </div>
-              </div>
-          </div>
-      </div>
     </div>
-    <div :class="{hide : tabNav !== 1}">哈哈</div>
-    <div :class="{hide : tabNav !== 2}">嘻嘻</div>
   </div>
 </template>
 <script>
@@ -113,21 +108,9 @@ export default {
       img3: require("../assets/src/images/biaodd_icon3.png"),
       img4: require("../assets/src/images/biaodd_code1.png"),
       img5: require("../assets/src/images/biaodd_code2.png"),
-      productList: [
-        {
-          id: 0,
-          title: "标大大"
-        },
-        {
-          id: 1,
-          title: "数据定制服务"
-        },
-        {
-          id: 2,
-          title: "日精进小程序"
-        }
-      ],
+      current: 0,
       tabNav: 0,
+      title: "标大大",
       biaoddList: [
         {
           title: "数据权威可靠",
@@ -170,6 +153,23 @@ export default {
               info: "查业绩（可查询全国住建、水利、交通行业）"
             }
           ]
+        }
+      ],
+      productList: [
+        {
+          id: 0,
+          title: "标大大",
+          path: "/productBig"
+        },
+        {
+          id: 1,
+          title: "数据定制服务",
+          path: "/dataService"
+        },
+        {
+          id: 2,
+          title: "日精进小程序",
+          path: "/smallOrder"
         }
       ],
       serviceList: [
@@ -217,141 +217,140 @@ export default {
           title: "",
           content: ""
         }
-      ]
+      ],
+      titleInfo: {
+        themem: "产品介绍",
+        title: "Product Presentation",
+        companyInfo:
+          "湖南思利他网络科技有限公司成立于2017年，前身是湖南耀邦。湖南思利他网络科技有限公司 成立于2017年，前身是湖南耀邦…"
+      }
     };
   },
   methods: {
-    getValue(data) {
-      this.tabNav = data;
+    handleClick(path, index) {
+      this.$router.push({ path: path, query: { id: index } });
     }
   }
 };
 </script>
 <style lang="less">
 @import "../styles/global";
-@bg-width: 1180px;
 .productBig {
-  .top_bar {
-    height: 468px;
-    width: 100%;
-    background-image: url("../assets/src/images/banner-info1.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    .bar_left {
+  .currentTab {
+    .active {
+      font-weight: 600;
+    }
+    .product_name li {
+      height: 60px;
+    }
+    .line {
+      width: 100px;
+      height: 6px;
+      border: none;
+      background-color: #000000;
+    }
+  }
+  .current0 {
+    .product_info {
       width: @bg-width;
       min-width: @bg-width;
       margin: 0 auto;
-      height: 100%;
-      .left_info {
-        font-size: 17px;
-        width: 700px;
+      .user_title {
+        margin-bottom: 80px;
       }
     }
-  }
-  .product_info {
-    width: @bg-width;
-    min-width: @bg-width;
-    margin: 0 auto;
-    .biaodd {
-      height: 120px;
-      line-height: 120px;
-      border-bottom: 1px solid #dddfe4;
+    .biaodd_info {
+      background-color: @bgColor;
+      .biaodd_item {
+        width: @bg-width;
+        min-width: @bg-width;
+        margin: 0 auto;
+        .biaodd_item_img {
+          width: 577px;
+          height: 453px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .item_info {
+        .bottom_info {
+          width: 485px;
+          span {
+            color: @mainColor;
+          }
+        }
+      }
     }
-    .user_title {
-      margin-bottom: 80px;
-    }
-  }
-  .biaodd_info {
-    background-color: @bgColor;
-    .biaodd_item {
-      width: @bg-width;
-      min-width: @bg-width;
-      margin: 0 auto;
-      .biaodd_item_img {
-        width: 577px;
-        height: 453px;
+    .service {
+      position: relative;
+      .core_service {
+        width: @bg-width;
+        min-width: @bg-width;
+        margin: 0 auto;
+        .img1 {
+          width: 89px;
+          height: 109px;
+          position: absolute;
+          top: 61px;
+          right: 457px;
+        }
+        .img2 {
+          width: 87px;
+          height: 93px;
+          position: absolute;
+          bottom: 33px;
+          left: 264px;
+        }
+        .img3 {
+          width: 56px;
+          height: 51px;
+          position: absolute;
+          right: 295px;
+          bottom: 56px;
+        }
         img {
           width: 100%;
           height: 100%;
         }
-      }
-    }
-    .item_info {
-      .bottom_info {
-        width: 485px;
-        span {
-          color: @mainColor;
-        }
-      }
-    }
-  }
-  .service {
-    position: relative;
-    .core_service {
-      width: @bg-width;
-      min-width: @bg-width;
-      margin: 0 auto;
-      .img1 {
-        width: 89px;
-        height: 109px;
-        position: absolute;
-        top: 61px;
-        right: 457px;
-      }
-      .img2 {
-        width: 87px;
-        height: 93px;
-        position: absolute;
-        bottom: 33px;
-        left: 264px;
-      }
-      .img3 {
-        width: 56px;
-        height: 51px;
-        position: absolute;
-        right: 295px;
-        bottom: 56px;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      .item {
-        ul > li {
-          .li_item {
-            width: 380px;
-            height: 134px;
-            border: 1px solid rgba(221, 223, 228, 1);
-          }
-          .hideBox {
-            border: none;
+        .item {
+          ul > li {
+            .li_item {
+              width: 380px;
+              height: 134px;
+              border: 1px solid rgba(221, 223, 228, 1);
+            }
+            .hideBox {
+              border: none;
+            }
           }
         }
       }
     }
-  }
-  .CQ_code {
+    .CQ_code {
       background: @bgColor;
       .link_code {
         width: @bg-width;
         min-width: @bg-width;
         margin: 0 auto;
         .code_item {
-            width: 342px;
-            height: 342px;
-            img {
-                width: 100%;
-                height: 100%;
-            }
+          width: 342px;
+          height: 342px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
-  }
-  //覆盖子组件样式
-  .publicInfo /deep/ .item_left {
-    background: url(../assets/src/images/biaodd_bg1.png) no-repeat !important;
-  }
-  .publicInfo /deep/ .item_right {
-    background: url(../assets/src/images/biaodd_bg2.png) no-repeat !important;
+    }
+    //覆盖子组件样式
+    .publicInfo /deep/ .item_left {
+      background: url(../assets/src/images/biaodd_bg1.png) no-repeat !important;
+    }
+    .publicInfo /deep/ .item_right {
+      background: url(../assets/src/images/biaodd_bg2.png) no-repeat !important;
+    }
   }
 }
 </style>

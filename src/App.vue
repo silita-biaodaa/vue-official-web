@@ -1,17 +1,16 @@
 <template>
   <!-- <iframe ref="iframe" id="bdIframe" :src="bdTokenUrl" frameborder="0" scrolling="no"></iframe> -->
   <div id="app">
-    <narBar></narBar>
     <router-view />
     <div class="public_footer bg-black">
       <div class="weChat clear">
-      <div class="fr cp" @click="returnTop">
-        <div class="weChat_img dfrc">
-          <img src="../src/assets/src/images/go_back.png" alt />
+        <div class="fr cp" @click="returnTop">
+          <div class="weChat_img dfrc">
+            <img src="../src/assets/src/images/go_back.png" alt />
+          </div>
         </div>
+        <div class="weChat_us color-fff fs20 text-c cp">联系我们</div>
       </div>
-      <div class="weChat_us color-fff fs20 text-c cp">联系我们</div>
-    </div>
       <div class="company_info">
         <div class="fs16">联系我们</div>
         <div class="dfrcb">
@@ -50,17 +49,19 @@
 export default {
   name: "App",
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
-    handleScroll (){
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    handleScroll() {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
     },
-    returnTop () {
+    returnTop() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
-    },
+    }
   },
   mounted() {
     /**
@@ -90,7 +91,7 @@ export default {
       $("#iFrame").css("top", objT);
       $("#iFrame").attr("src", url);
     }
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll);
   }
 };
 </script>
@@ -104,6 +105,7 @@ export default {
   height: 100%;
   width: 100%;
   min-width: @min-width;
+  background-color: @whiteColor;
   .public_footer {
     position: relative;
     height: 390px;
@@ -137,10 +139,10 @@ export default {
   }
   .weChat {
     width: 154px;
-     overflow: hidden;
-     position: absolute;
-     right: 60px;
-     bottom: 180%;
+    overflow: hidden;
+    position: absolute;
+    right: 60px;
+    bottom: 180%;
     .weChat_img {
       width: 52px;
       height: 52px;
@@ -160,6 +162,21 @@ export default {
       background: rgba(36, 76, 215, 1);
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.17);
       border: 1px solid rgba(221, 223, 228, 1);
+    }
+  }
+  .el-table {
+    border: 1px solid #ebeef5;
+    border-bottom: none;
+    border-right: none;
+    th {
+      background-color: #dddfe4;
+      font-weight: 700;
+      color: #000;
+      font-size: 14px;
+      height: 60px;
+    }
+    td {
+      height: 60px;
     }
   }
 }

@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <narBar></narBar>
     <div class="home_middle">
       <div class="dfrcb home_middle_title">
         <div class="color-fff">
@@ -18,11 +19,17 @@
         <div>
           <div class="select cp">
             <ul class="fs20 dfrca product_name">
-              <li ref="li" v-for="(item,a) in productList" :key="a" @click="handleClick(item.id)">
+              <li
+                ref="li"
+                v-for="(item,a) in productList"
+                :key="a"
+                @click="handleClick(item.id)"
+                class="center-tb-scatter"
+              >
                 <a :class="{active : current == item.id}">
                   {{item.title}}
-                  <div v-if="current == item.id" class="line"></div>
                 </a>
+                <div v-if="current == item.id" class="line"></div>
               </li>
             </ul>
             <el-divider class="mb40"></el-divider>
@@ -56,12 +63,14 @@
       </div>
       <div class="service_area_info">
         <ul class="info_list">
-          <li v-for="(item,i) in areaInfo" :key="i" class="info_title mb20 cp">
-            <div class="fs20 color-fff ml30 mt30 mb30">{{item.title}}</div>
+          <li v-for="(item,i) in areaInfo" :key="i" class="info_title cp mb20">
+            <div class="info_item">
+              <div class="fs20 color-fff pt30 pl30 pr30 pb30">{{item.title}}</div>
             <div class="pl30">
               <ul v-for="(a,b) in item.information" :key="b">
                 <li class="color-fff fs14 mb10">{{a.info}}</li>
               </ul>
+            </div>
             </div>
           </li>
         </ul>
@@ -200,51 +209,51 @@ export default {
           title: "日精进小程序"
         }
       ],
-      tableInfo:[
+      tableInfo: [
         {
           id: "0",
           name: "湖南水口山资产经营管理有限公司物业分离移交项目(EPC)",
           time: "2019年2月",
           area: "衡阳市",
-          price: "8254.42",
+          price: "8254.42"
         },
         {
           id: "1",
           name: "汝城经济开发区广东电子智能产业园基础设施和场地平整EPC 总承包",
           time: "2019年2月",
           area: "郴州市",
-          price: "1000000.00",
+          price: "1000000.00"
         },
         {
           id: "2",
           name: "湘潭市雨湖区湘锰小学提质改造建设项目(一期)工程总承包 EPC施工",
           time: "2019年2月",
           area: "湘潭市",
-          price: "700.00",
+          price: "700.00"
         },
         {
           id: "3",
           name: "爱劳渠黑臭水体基础治理工程总承包(EPC)项目",
           time: "2019年3月",
           area: "湘潭市",
-          price: "12200.00",
+          price: "12200.00"
         },
         {
           id: "4",
           name: "安化县东坪镇杨林含镉石煤开采区历史遗留污染环境治理EPC 项目",
           time: "2019年3月",
           area: "益阳市",
-          price: "1550.00",
+          price: "1550.00"
         },
         {
           id: "5",
           name: "湖南科技学院棚户区改造项目EPC",
           time: "2019年3月",
           area: "永州市",
-          price: "9469.60",
+          price: "9469.60"
         }
       ],
-      current: 1
+      current: 0
     };
   },
   methods: {
@@ -259,7 +268,6 @@ export default {
 @import "../styles/global";
 @width: 100%;
 @bg-black: #000000;
-@bg-width: 1180px;
 .home {
   width: 100%;
   .home_middle {
@@ -314,7 +322,6 @@ export default {
       font-weight: 600;
     }
     .product_name li {
-      text-align: center;
       height: 60px;
     }
     .line {
@@ -322,7 +329,6 @@ export default {
       height: 6px;
       border: none;
       background-color: #000000;
-      margin: 28px auto 0;
     }
   }
   .service_area {
@@ -351,19 +357,25 @@ export default {
       .info_list {
         display: flex;
         flex-direction: row;
-        align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
         width: @width;
         transition: all 2s ease-in-out; //这里表示动画的时间为2s
         .info_title {
-          border-radius: 4px;
           height: 228px;
           width: 380px;
+          border-radius: 4px;
+          background-color: #4468e5;
+          .info_item {
+          height: 100%;
+          width: 100%;
+          border-radius: 4px;
+        }
+        .info_item:hover {
+          transform: scale(1.03, 1.07);
+          border: 1px solid #ffffff;
           background-color: #4468e5;
         }
-        .info_title:hover {
-          transform: scale(1.03, 1.07);
         }
       }
     }

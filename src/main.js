@@ -12,12 +12,18 @@ import publicInfo from '../src/components/publicInfo.vue';
 import publicProduct from '../src/components/publicProduct.vue';
 import publicTable from '../src/components/publicTable.vue';
 import currentTab from '../src/components/currentTab.vue';
+import topBar from '../src/components/topBar.vue';
+import productInfo from '../src/components/productInfo.vue';
+import barTitle from '../src/components/barTitle.vue';
 //自定义组件
 Vue.component('narBar', narBar);
 Vue.component('publicProduct', publicProduct);
 Vue.component('publicInfo', publicInfo);
 Vue.component('publicTable', publicTable);
 Vue.component('currentTab', currentTab);
+Vue.component('topBar', topBar);
+Vue.component('productInfo', productInfo);
+Vue.component('barTitle', barTitle);
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false

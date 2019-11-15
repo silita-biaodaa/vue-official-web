@@ -562,6 +562,30 @@ i {
       flex-direction: row;
       align-items: stretch;
     }
+    .center-tb-scatter {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: -o-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      -o-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: space-between;
+      -moz-justify-content: space-between;
+      -ms-justify-content: space-between;
+      -o-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      line-height: 1.4;
+    }
     // 图片模式
     .img-contain {
       background-size: contain;
@@ -578,4 +602,9 @@ i {
   //清除浮动;
   .clearfix:after{content:".";clear: both;height:0;visibility: hidden;display:block;}
   .clearfix{*zoom: 1;}
+  .public_title {
+    width: @bg-width;
+    min-width: @bg-width;
+    margin: 0 auto; 
+  }
 }

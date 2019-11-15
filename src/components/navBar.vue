@@ -2,11 +2,13 @@
   <div class="navBar">
     <div class="navbar">
       <div class="navbar_info">
-        <div class="navbar_top_left drc">
+        <a @click="jumpIndex" class="cp">
+          <div class="navbar_top_left drc">
           <!-- <img :src="img1" alt /> -->
           <div class="navbar_top_line bg-white ml20 mr20"></div>
           <div class="color-fff fs16">积善行 思利他</div>
         </div>
+        </a>
         <div class="navbar_top_right">
           <ul class="drc color-fff fs16">
             <li
@@ -36,7 +38,7 @@
                   @click="toParent(i.index)"
                   :class="{showArrow: Index == i.index}"
                 >
-                  <a class="color-fff" @click="jump(i.pathRef)">
+                  <a class="color-fff" @click="jump(i.pathRef,i.index)">
                     {{i.name}}
                     <i class="el-icon-right ml10" :class="{'hide': Index !== i.index}"></i>
                   </a>
@@ -65,11 +67,13 @@ export default {
             },
             {
               index: 1,
-              name: "数据定制服务"
+              name: "数据定制服务",
+              pathRef: "/dataService"
             },
             {
               index: 2,
-              name: "日精进小程序"
+              name: "日精进小程序",
+              pathRef: "/smallOrder"
             }
           ]
         },
@@ -80,26 +84,32 @@ export default {
             {
               index: 0,
               name: "建筑数据定制大服务",
+              pathRef: "/building"
             },
             {
               index: 1,
-              name: "数据资讯服务"
+              name: "数据资讯服务",
+              pathRef: "/advice",
             },
             {
               index: 2,
-              name: "网站开发服务"
+              name: "网站开发服务",
+              pathRef: "/webDevelop"
             },
             {
               index: 3,
-              name: "APP开发服务"
+              name: "APP开发服务",
+              pathRef: "/appDevelop"
             },
             {
               index: 4,
-              name: "微信公众号开发服务"
+              name: "微信公众号开发服务",
+              pathRef: "/weChatDevelop"
             },
             {
               index: 5,
-              name: "小程序开发服务"
+              name: "小程序开发服务",
+              pathRef: "/appletDevelop"
             }
           ]
         },
@@ -160,8 +170,15 @@ export default {
     toParent(i) {
         this.$emit('toChildren', i);
     },
-    jump(path){
-      this.$router.push(path)
+    jump(path,index){
+      if(this.$route.path !== path) {
+        this.$router.push({ path: path, query: { id: index } });
+      }
+    },
+    jumpIndex() {
+      if(this.$route.path !== "/") {
+        this.$router.push("/");
+      }
     }
   }
 };

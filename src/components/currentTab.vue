@@ -1,12 +1,12 @@
 <template>
   <div class="currentTab bg-fff">
     <div class="select cp">
-      <ul class="fs20 dfrca product_name">
-        <li ref="li" v-for="(item,a) in parentsList" :key="a" @click="handleClick(item.id)">
-          <a :class="{active : current == item.id}">
+      <ul class="fs20 dfrcb product_name">
+        <li ref="li" v-for="(item,a) in parentsList" :key="a" @click="handleClick(item.id,item.path)" class="center-tb-scatter">
+          <a :class="{active : current == item.path}">
             {{item.title}}
-            <div v-if="current == item.id" class="line"></div>
           </a>
+          <div v-if="current == item.path" class="line"></div>
         </li>
       </ul>
     </div>
@@ -19,22 +19,27 @@ export default {
     productList: {
       type: Array,
       default: ""
-    }
+    },
   },
   data() {
     return {
       parentsList: [],
-      current: 0
+      current: ''
     };
   },
   methods: {
-    handleClick(index) {
+    handleClick(index,path) {
       this.current = index;
-      this.$emit('childValue',this.current);
+      if(this.$route.path !== path) {
+        this.$router.push({ path: path, query: { id: index } });
+      }
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
   },
   created() {
     this.parentsList = this.$parent.productList;
+    this.current = this.$route.path;
   }
 };
 </script>
@@ -44,16 +49,19 @@ export default {
   .active {
     font-weight: 600;
   }
-  .product_name li {
-    text-align: center;
-    height: 60px;
+  .product_name{
+    width: 1180px;
+    min-width: 1180px;
+    margin: 0 auto;
+    li {
+      height: 60px;
+    }
   }
   .line {
     width: 100px;
     height: 6px;
     border: none;
     background-color: #000000;
-    margin: 28px auto 0;
   }
 }
 </style>
