@@ -91,7 +91,7 @@ export default {
             },
             {
               index: 1,
-              name: "数据资讯服务",
+              name: "数据咨询服务",
               pathRef: "/advice",
             },
             {

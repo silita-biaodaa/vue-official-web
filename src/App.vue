@@ -4,7 +4,7 @@
     <router-view />
     <div class="public_footer bg-black">
       <div class="company_info">
-        <div class="fs16">联系我们</div>
+        <!-- <div class="fs16">联系我们</div> -->
         <div class="dfrcb">
           <div class="company_footer">
             <div class="company_info_link fs14">
@@ -28,7 +28,7 @@
           </div>
           <div class="CQ_code">
             <img src="../src/assets/src/images/CQ_code.jpg" alt />
-            <div class="text-c">关注公众号</div>
+            <div class="text-c">微信号</div>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-        if(scrollTop > 1300) {
+        if(scrollTop > 500) {
           this.toBack = true;
         }else {
           this.toBack = false;

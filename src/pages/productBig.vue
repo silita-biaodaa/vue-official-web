@@ -52,18 +52,18 @@
         </div>
         <div class="pt80 pb80 service">
           <div class="core_service">
-            <div class="img1">
-              <img :src="img1" alt />
-            </div>
-            <div class="img2">
-              <img :src="img2" alt />
-            </div>
-            <div class="img3">
-              <img :src="img3" alt />
-            </div>
             <div class="text-c fs34 mb40">会员专属八大核心服务</div>
             <div class="item">
               <ul class="dfrcb">
+                <div class="img1">
+                  <img :src="img1" alt />
+                </div>
+                <div class="img2">
+                  <img :src="img2" alt />
+                </div>
+                <div class="img3">
+                  <img :src="img3" alt />
+                </div>
                 <li v-for="(item,index) in serviceList" :key="index" class="mt20">
                   <div :class="{'hideBox': index == 8}" class="li_item">
                     <div class="fs16 f600 pt20 pb10 pl20 pr20">{{item.title}}</div>
@@ -220,7 +220,7 @@ export default {
       ],
       titleInfo: {
         themem: "产品介绍",
-        title: "Product Presentation",
+        title: "Product Presentation"
         // companyInfo:
         //   "湖南思利他网络科技有限公司成立于2017年，前身是湖南耀邦。湖南思利他网络科技有限公司 成立于2017年，前身是湖南耀邦…"
       }
@@ -284,37 +284,37 @@ export default {
       }
     }
     .service {
-      position: relative;
       .core_service {
         width: @bg-width;
         min-width: @bg-width;
         margin: 0 auto;
-        .img1 {
-          width: 89px;
-          height: 109px;
-          position: absolute;
-          top: 61px;
-          right: 250px;
-        }
-        .img2 {
-          width: 87px;
-          height: 93px;
-          position: absolute;
-          bottom: 33px;
-          left: 200px;
-        }
-        .img3 {
-          width: 56px;
-          height: 51px;
-          position: absolute;
-          right: 150px;
-          bottom: 56px;
-        }
-        img {
-          width: 100%;
-          height: 100%;
-        }
         .item {
+          position: relative;
+          .img1 {
+            width: 89px;
+            height: 109px;
+            position: absolute;
+            top: -98px;
+            right: 87px;
+          }
+          .img2 {
+            width: 87px;
+            height: 93px;
+            position: absolute;
+            bottom: 33px;
+            left: -246px;
+          }
+          .img3 {
+            width: 56px;
+            height: 51px;
+            position: absolute;
+            right: -75px;
+            bottom: 56px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
           ul > li {
             .li_item {
               width: 380px;

@@ -1,7 +1,7 @@
 <template>
   <div class="currentTab bg-fff">
     <div class="select cp">
-      <ul class="fs20 dfrcb product_name">
+      <ul class="fs20 dfrca product_name">
         <li ref="li" v-for="(item,a) in parentsList" :key="a" @click="handleClick(item.id,item.path)" class="center-tb-scatter fs16">
           <a :class="{active : current == item.path}">
             {{item.title}}
@@ -53,6 +53,7 @@ export default {
     margin: 0 auto;
     li {
       height: 60px;
+      width: 150px;
     }
   }
   .line {

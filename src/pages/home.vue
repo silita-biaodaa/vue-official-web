@@ -6,7 +6,7 @@
         <div class="color-fff">
           <div class="title_slogan">通过利他、实现共赢</div>
           <div class="fs18">我们期盼着能为每个建筑企业带来便利，帮他们提高公司效益实现共赢。</div>
-          <div class="link_us text-c cp">联系我们</div>
+          <!-- <div class="link_us text-c cp">联系我们</div> -->
         </div>
         <div>
           <img :src="img2" alt />
@@ -101,7 +101,7 @@
             </li>
           </ul>
         </div>
-        <div class="info-btn cp">立即体验</div>
+        <!-- <div class="info-btn cp">立即体验</div> -->
       </div>
     </div>
   </div>
