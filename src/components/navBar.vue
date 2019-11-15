@@ -72,7 +72,7 @@ export default {
             },
             {
               index: 2,
-              name: "日精进小程序",
+              name: "日精进定课小程序",
               pathRef: "/smallOrder"
             }
           ]
@@ -83,7 +83,7 @@ export default {
           companyInfo: [
             {
               index: 0,
-              name: "建筑数据定制大服务",
+              name: "建筑大数据定制大服务",
               pathRef: "/building"
             },
             {
@@ -119,7 +119,7 @@ export default {
           companyInfo: [
             {
               index: 0,
-              name: "团队介绍"
+              name: "团队介绍",
             },
             {
               index: 1,
@@ -133,19 +133,18 @@ export default {
           companyInfo: [
             {
               index: 0,
-              name: "公司简介"
+              name: "公司简介",
+              pathRef: "/companyInfo"
             },
             {
               index: 1,
-              name: "发展历程"
+              name: "发展历程",
+              pathRef: "/history"
             },
             {
               index: 2,
-              name: "企业文化"
-            },
-            {
-              index: 3,
-              name: "发展规划"
+              name: "企业文化",
+              pathRef: "/culture"
             }
           ]
         }

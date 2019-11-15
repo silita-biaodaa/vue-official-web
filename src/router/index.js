@@ -10,6 +10,9 @@ import appDevelop from '@/pages/appDevelop'
 import webDevelop from '@/pages/webDevelop'
 import weChatDevelop from '@/pages/weChatDevelop'
 import appletDevelop from '@/pages/appletDevelop'
+import companyInfo from '@/pages/companyInfo'
+import culture from '@/pages/culture'
+import history from '@/pages/history'
 Vue.use(Router)
 
 export default new Router({
@@ -63,6 +66,21 @@ export default new Router({
       path:'/appletDevelop',
       name: "appletDevelop",
       component: appletDevelop
-    }
+    },
+    {
+      path:'/companyInfo',
+      name: "companyInfo",
+      component: companyInfo
+    },
+    {
+      path:'/culture',
+      name: "culture",
+      component: culture
+    },
+    {
+      path:'/history',
+      name: "history",
+      component: history
+    },
   ]
 })

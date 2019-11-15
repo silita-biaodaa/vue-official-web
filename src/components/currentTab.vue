@@ -2,7 +2,7 @@
   <div class="currentTab bg-fff">
     <div class="select cp">
       <ul class="fs20 dfrcb product_name">
-        <li ref="li" v-for="(item,a) in parentsList" :key="a" @click="handleClick(item.id,item.path)" class="center-tb-scatter">
+        <li ref="li" v-for="(item,a) in parentsList" :key="a" @click="handleClick(item.id,item.path)" class="center-tb-scatter fs16">
           <a :class="{active : current == item.path}">
             {{item.title}}
           </a>
@@ -33,8 +33,6 @@ export default {
       if(this.$route.path !== path) {
         this.$router.push({ path: path, query: { id: index } });
       }
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
     }
   },
   created() {
